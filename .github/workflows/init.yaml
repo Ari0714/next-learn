@@ -2,13 +2,13 @@ on: push
 
 jobs:
   job1:
-    runs-on: ubuntu-lasest
+    runs-on: ubuntu-latest
     steps:
       - run: pwd
       - run: pwd
       - run: echo "hello githubAction"
   job2:
-    runs-on: windows-lasest
+    runs-on: windows-latest
     steps:
       - run: node -v
       - run: dir
