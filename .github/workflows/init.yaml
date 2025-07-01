@@ -1,14 +1,10 @@
 on: push
 
 jobs:
-  job1:
+  npm-build:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
-      - run: pwd
-      - run: echo "hello githubAction"
-  job2:
-    runs-on: windows-latest
-    steps:
-      - run: node -v
-      - run: dir
+      - run: npm -v
+      - run: npm i
+      - run: npm build
