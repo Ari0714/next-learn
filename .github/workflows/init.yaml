@@ -4,6 +4,7 @@ jobs:
   npm-build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: pwd
       - run: npm -v
       - run: npm i
