@@ -19,9 +19,9 @@ jobs:
 
       - name: 打包
         run: |
-        npm i
-        npm run build
-        touch out/.nojekyll
+          npm i
+          npm run build
+          touch out/.nojekyll
 
       - name: ls
         run: ls /home/runner/work/next-learn/next-learn/
