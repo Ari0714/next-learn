@@ -23,8 +23,11 @@ jobs:
       - name: 打包2
         run: npm run build
 
+      - name: ls
+        run: ls /home/runner/work/next-learn/
+
       - name: 部署
-        uses: JamesIves/github-pages-deploy-action@master
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: build
