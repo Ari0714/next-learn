@@ -1,0 +1,14 @@
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-lasest
+    steps:
+      - run: pwd
+      - run: pwd
+      - run: echo "hello githubAction"
+  job2:
+    runs-on: windows-lasest
+    steps:
+      - run: node -v
+      - run: dir
