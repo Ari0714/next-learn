@@ -2,6 +2,9 @@ name: 打包react项目
 
 on: push
 
+permissions:
+  contents: write
+
 jobs:
   npm-build:
     name: npm build 工作
@@ -14,8 +17,13 @@ jobs:
       - name: 测试pwd
         run: pwd
 
-      - name: 测试pwd
-        run: npm i
+      - name: 打包
+        run: |
+          npm i
+          npm run build
 
-      - name: 测试pwd
-        run: npm run build
+      - name: 部署
+        action: Jameslves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          fold: build
