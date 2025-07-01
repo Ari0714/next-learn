@@ -21,7 +21,6 @@ jobs:
         run: |
           npm i
           npm run build
-          touch out/.nojekyll
 
       - name: ls
         run: ls /home/runner/work/next-learn/next-learn/
@@ -30,4 +29,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out
+          folder: .next/
