@@ -1,0 +1,33 @@
+name: 打包react项目
+
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  npm-build:
+    name: npm build 工作
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 读取仓库内容
+        uses: actions/checkout@v4
+
+      - name: 测试pwd
+        run: pwd
+
+      - name: 打包
+        run: |
+        npm i
+        npm run build
+        touch out/.nojekyll
+
+      - name: ls
+        run: ls /home/runner/work/next-learn/next-learn/
+
+      - name: 部署
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
